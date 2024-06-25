@@ -6,6 +6,7 @@ export * from './enums/main-category.enum';
 export * from './enums/platform-type.enum';
 
 // INTERFACES
+export * from './interfaces/user-profile.interface';
 export * from './interfaces/category.interface';
 export * from './interfaces/delivery.interface';
 export * from './interfaces/carrier.interface';
@@ -18,6 +19,6 @@ export * from './interfaces/post.interface';
 export * from './interfaces/review.interface';
 export * from './interfaces/support-ticket.interface';
 export * from './interfaces/tag.interface';
-export * from './interfaces/user-profile.interface';
+
 
 //TODO add new interfaces there
