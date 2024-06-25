@@ -38,9 +38,9 @@ Import and use the types in your project:
 import { User, UserRole, UserID } from '@colaido/shared-library';
 
 const user: User = {
-  id: "123",
-  name: "John Doe",
-  email: "john.doe@example.com"
+   id: "123",
+   name: "John Doe",
+   email: "john.doe@example.com"
 };
 
 const role: UserRole = UserRole.Admin;
@@ -75,9 +75,14 @@ Before making new changes, ensure you have the latest code from the repository:
    ```
 
 3. **Make your changes** in the `src` directory. For example, you can add or update interfaces, enums, or types.
-4. ! Export your interface inside the `src/index.ts` for example 
 
-4. **Build the project** to ensure there are no errors:
+4. ** ⚠️ ⚠️ ⚠️ Should export your interface ⚠️ ⚠️ ⚠️ inside the `src/index.ts` for example:
+
+   ```typescript
+   export * from './interfaces/user-profile.interface';
+   ```
+
+5. **Build the project** to ensure there are no errors:
 
    ```bash
    npm run build
@@ -136,40 +141,40 @@ The GitHub Actions workflow is defined in `.github/workflows/publish.yml`:
 name: Publish to npm
 
 on:
-  push:
-    tags:
-      - 'v*.*.*' # Matches tag names like v1.0.0, v2.1.3, etc.
+   push:
+      tags:
+         - 'v*.*.*' # Matches tag names like v1.0.0, v2.1.3, etc.
 
 jobs:
-  publish:
-    runs-on: ubuntu-latest
+   publish:
+      runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      steps:
+         - name: Checkout repository
+           uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+         - name: Set up Node.js
+           uses: actions/setup-node@v2
+           with:
+              node-version: '14'
 
-      - name: Install dependencies
-        run: npm install
+         - name: Install dependencies
+           run: npm install
 
-      - name: Build the project
-        run: npm run build
+         - name: Build the project
+           run: npm run build
 
-      - name: Publish to npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access public
+         - name: Publish to npm
+           env:
+              NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+           run: npm publish --access public
 
-      - name: Push tags back to repository
-        run: |
-          git config --global user.email "your-email@example.com"
-          git config --global user.name "Your Name"
-          git tag v$(node -p -e "require('./package.json').version")
-          git push origin --tags
+         - name: Push tags back to repository
+           run: |
+              git config --global user.email "your-email@example.com"
+              git config --global user.name "Your Name"
+              git tag v$(node -p -e "require('./package.json').version")
+              git push origin --tags
 ```
 
 ## Setting Up GitHub Secrets
