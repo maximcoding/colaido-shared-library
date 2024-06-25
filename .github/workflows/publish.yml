@@ -1,14 +1,9 @@
 name: Publish to npm
 
 on:
-  pull_request:
-    branches:
-      - main
-  push:
-    branches:
-      - main
-    tags:
-      - 'v*.*.*' # Matches tag names like v1.0.0, v2.1.3, etc.
+  release:
+    types:
+      - created
 
 jobs:
   publish:

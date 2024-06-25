@@ -124,13 +124,18 @@ Publishing to the npm registry is handled automatically by GitHub Actions when y
 3. **Create a new git tag**:
 
    ```bash
-   git tag v1.0.1  # Replace with the new version
+   git tag -a v1.0.0 -m "Release version 1.0.0"  # Replace with the new version
    ```
-
 4. **Push the tag to GitHub**:
 
    ```bash
    git push origin v1.0.1
+   ```
+
+5. **Push the tag to GitHub**:
+
+   ```bash
+   gh release create v1.0.0 --title "Version 1.0.0" --notes "This release includes the following changes..."
    ```
 
 ## GitHub Actions Workflow
