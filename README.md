@@ -1,7 +1,45 @@
 
 # Colaido Shared Library
 
+
 A shared library of TypeScript interfaces, enums, and types.
+
+## Guide to upgrade the library automatically
+Skip the guide if you are doing manually upgrade.
+
+### First: make your development changes: 
+1. See [Development](#development) guide .
+
+### Second: Install jq + tsc globally to your environment:
+2. Mac ```brew install jq``` or Ubuntu/Debian ```sudo apt-get install jq```
+
+### Third: run the magic script
+3.```./release.sh```
+
+### Latest: check and validate 
+1. **The script successfully did the job** ? [Validate npm registry](https://www.npmjs.com/package/@colaido/shared-library)
+2. **The script Failed** ? [Github Action failures for details](https://github.com/maximcoding/colaido-shared-library/actions)
+
+##### The script does the following:
+1. **Check for necessary commands**: The script checks if jq, tsc, npm, git, and gh are installed.
+2. **Build the project**: The script runs tsc to compile the TypeScript project.
+3. **Read the current version**: The script reads the current version from package.json.
+4. **Increment the patch version**: The script increments the patch version by 1.
+5. **Update package.json**: The script updates package.json with the new version.
+6. **Install npm dependencies**: The script runs npm install & generates a new **package-lock.json**.
+7. **Commit changes**: The script stages and commits the changes to Git.
+8. **Push the commit**: The script pushes the commit to the remote repository.
+9. **Create a new tag**: The script creates a new Git tag with the new version.
+10. **Push the tag**: The script pushes the tag to the remote repository.
+11. **Create a GitHub release**: The script uses the GitHub CLI to create a release with the new tag, title, and notes
+12. **Github Action run (.github/workflows/publish.yml) - which does publish the release to npm registry ()
+
+
+
+
+
+
+
 
 ## Table of Contents
 

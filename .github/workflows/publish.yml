@@ -25,15 +25,6 @@ jobs:
         run: npm run build
 
       - name: Publish to npm
-        if: github.ref_type == 'tag'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --access public
-
-      - name: Push tags back to repository
-        if: github.ref_type == 'tag'
-        run: |
-          git config --global user.email "maximcoding@gmail.com"
-          git config --global user.name "Maxim Livshitz"
-          git tag v$(node -p -e "require('./package.json').version")
-          git push origin --tags

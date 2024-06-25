@@ -1,6 +1,6 @@
 {
   "name": "@colaido/shared-library",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "A shared library of TypeScript interfaces, enums, and types",
   "main": "dist/index.d.ts",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc",
     "version": "npm run build && git add -A dist",
-
+    "release": "./release.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
