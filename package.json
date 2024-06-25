@@ -4,19 +4,21 @@
   "description": "A shared library of TypeScript interfaces, enums, and types",
   "main": "dist/index.d.ts",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/colaido/shared-library.git"
+    "url": "https://github.com/maximcoding/colaido-shared-library.git"
   },
   "bugs": {
-    "url": "https://github.com/colaido/shared-library/issues"
+    "url": "https://github.com/maximcoding/colaido-shared-library/issues"
   },
-  "homepage": "https://github.com/colaido/shared-library#readme",
+  "homepage": "https://github.com/maximcoding/colaido-shared-library#readme",
   "keywords": [],
   "author": "Maxim Livshitz",
   "license": "ISC",
