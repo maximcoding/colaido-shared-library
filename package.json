@@ -1,12 +1,10 @@
 {
   "name": "@colaido/shared-library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A shared library of TypeScript interfaces, enums, and types",
   "main": "dist/index.d.ts",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
