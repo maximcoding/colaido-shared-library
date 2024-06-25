@@ -1,6 +1,6 @@
 {
   "name": "@colaido/shared-library",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A shared library of TypeScript interfaces, enums, and types",
   "main": "dist/index.d.ts",
   "types": "dist/index.d.ts",
