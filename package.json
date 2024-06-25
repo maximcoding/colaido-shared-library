@@ -1,0 +1,27 @@
+{
+  "name": "@colaido/shared-library",
+  "version": "1.0.0",
+  "description": "A shared library of TypeScript interfaces, enums, and types",
+  "main": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colaido/shared-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/colaido/shared-library/issues"
+  },
+  "homepage": "https://github.com/colaido/shared-library#readme",
+  "keywords": [],
+  "author": "Maxim Livshitz",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.8",
+    "typescript": "^5.5.2"
+  }
+}
