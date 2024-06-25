@@ -146,7 +146,14 @@ Before making new changes, ensure you have the latest code from the repository:
    git push origin main
    ```
 
-### Releasing a New Tag
+### Manually Release + Publish 
+Skip if you are using github actions inside CLI GUIDE
+
+1. Go to github web , inside repo => 'create a new tag' as the version from package.json
+2. Go to github web, inside repo => 'draft new release' from your commit + your tag
+3. Push to npm registry as public repository ```bash npm publish```
+
+### Releasing a New Tag (CLI GUIDE)
 
 Publishing to the npm registry is handled automatically by GitHub Actions when you push a new tag to the repository. Follow these steps to create and push a new version:
 
@@ -182,49 +189,6 @@ Publishing to the npm registry is handled automatically by GitHub Actions when y
    gh release create v1.0.0 --title "Version 1.0.0" --notes "This release includes the following changes..."
    ```
 
-## GitHub Actions Workflow
-
-The GitHub Actions workflow is defined in `.github/workflows/publish.yml`:
-
-```yaml
-name: Publish to npm
-
-on:
-   push:
-      tags:
-         - 'v*.*.*' # Matches tag names like v1.0.0, v2.1.3, etc.
-
-jobs:
-   publish:
-      runs-on: ubuntu-latest
-
-      steps:
-         - name: Checkout repository
-           uses: actions/checkout@v2
-
-         - name: Set up Node.js
-           uses: actions/setup-node@v2
-           with:
-              node-version: '14'
-
-         - name: Install dependencies
-           run: npm install
-
-         - name: Build the project
-           run: npm run build
-
-         - name: Publish to npm
-           env:
-              NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-           run: npm publish --access public
-
-         - name: Push tags back to repository
-           run: |
-              git config --global user.email "your-email@example.com"
-              git config --global user.name "Your Name"
-              git tag v$(node -p -e "require('./package.json').version")
-              git push origin --tags
-```
 
 ## Setting Up GitHub Secrets
 
