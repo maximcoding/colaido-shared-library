@@ -19,3 +19,5 @@ export * from './interfaces/review.interface';
 export * from './interfaces/support-ticket.interface';
 export * from './interfaces/tag.interface';
 export * from './interfaces/user-profile.interface';
+
+//TODO add new interfaces there
