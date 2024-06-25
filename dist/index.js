@@ -21,6 +21,7 @@ __exportStar(require("./enums/languages.enum"), exports);
 __exportStar(require("./enums/main-category.enum"), exports);
 __exportStar(require("./enums/platform-type.enum"), exports);
 // INTERFACES
+__exportStar(require("./interfaces/user-profile.interface"), exports);
 __exportStar(require("./interfaces/category.interface"), exports);
 __exportStar(require("./interfaces/delivery.interface"), exports);
 __exportStar(require("./interfaces/carrier.interface"), exports);
@@ -33,4 +34,4 @@ __exportStar(require("./interfaces/post.interface"), exports);
 __exportStar(require("./interfaces/review.interface"), exports);
 __exportStar(require("./interfaces/support-ticket.interface"), exports);
 __exportStar(require("./interfaces/tag.interface"), exports);
-__exportStar(require("./interfaces/user-profile.interface"), exports);
+//TODO add new interfaces there

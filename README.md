@@ -87,17 +87,6 @@ Before making new changes, ensure you have the latest code from the repository:
    ```bash
    npm run build
    ```
-⚠️ ⚠️ ⚠️
-6. **Upgrade package.json  to next "version": "1.0.7**"
-
-7. generate new package-lock.json
-  ```bash
-   npm install
-   ```
-8. Validate package-lock.json had been updated
-
-⚠️ ⚠️ ⚠️
- 
 
 ### Committing and Pushing Changes
 
@@ -123,13 +112,19 @@ Before making new changes, ensure you have the latest code from the repository:
 
 Publishing to the npm registry is handled automatically by GitHub Actions when you push a new tag to the repository. Follow these steps to create and push a new version:
 
-1. **Update the version number** in `package.json` according to [semantic versioning](https://semver.org/).
+1. **Update the version number** in `package.json` according to [semantic versioning](https://semver.org/). ️
 
-2. **Commit the version bump**:
+2. **Generate new package-lock.json**  and validate package-lock.json had been updated ⚠️ ⚠️ ⚠️
+  ```bash
+   npm install
+   ```
+   
+4. **Commit the version bump**:
 
    ```bash
-   git add package.json
+   git add .
    git commit -m "Bump version to x.x.x"
+   git push origin main
    ```
 
 3. **Create a new git tag**:
