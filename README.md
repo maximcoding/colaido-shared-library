@@ -87,6 +87,17 @@ Before making new changes, ensure you have the latest code from the repository:
    ```bash
    npm run build
    ```
+⚠️ ⚠️ ⚠️
+6. **Upgrade package.json  to next "version": "1.0.7**"
+
+7. generate new package-lock.json
+  ```bash
+   npm install
+   ```
+8. Validate package-lock.json had been updated
+
+⚠️ ⚠️ ⚠️
+ 
 
 ### Committing and Pushing Changes
 
